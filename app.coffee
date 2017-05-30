@@ -4,7 +4,7 @@ express = require 'express'
 http = require 'http'
 
 app = express()
-server = app.listen process.env.PORT or 3001
+server = app.listen process.env.PORT or 3000
 io = require('socket.io') server
 
 KEY = 'tZWNpjTrjnM5rMh8xLpeM8X95'

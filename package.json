@@ -1,13 +1,17 @@
 {
-  "name": "boilerplate",
+  "name": "MyCTAMap",
   "version": "1.0.0",
-  "description": "a boilerplate for all web-development projects",
-  "main": "index.js",
+  "description": "Real-time CTA vehicle map",
+  "main": "app.js",
   "scripts": {
     "test": "gulp"
   },
-  "author": "Anton Outkine",
-  "license": "ISC",
+  "author": "Anton Outkine <antonoutkine@gmail.com> (https://github.com/Jetmate)",
+  "contributors": [
+    "Christian Sparks <csparks1919@hotmail.com> (https://github.com/cmsparks)"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/Jetmate/CTAMap",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.4.0",

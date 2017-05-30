@@ -12,7 +12,7 @@
 
   app = express();
 
-  server = app.listen(process.env.PORT || 3001);
+  server = app.listen(process.env.PORT || 3000);
 
   io = require('socket.io')(server);
 
