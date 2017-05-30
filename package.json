@@ -1,0 +1,26 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "a boilerplate for all web-development projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "author": "Anton Outkine",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.4.0",
+    "gulp-coffee": "^2.3.4",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.15.3",
+    "helmet": "^3.6.1",
+    "socket.io": "^2.0.1"
+  }
+}

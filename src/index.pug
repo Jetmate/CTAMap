@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    link(rel="stylesheet" href="site.css")
+    title My CTA Map
+  body
+    form(action="map.html" method="get")
+      select(id="selector" name="rt")
+      button Submit
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js")
+    script(src="index.js")
