@@ -15,10 +15,10 @@ interval = undefined
 
 app.use helmet()
 app.use (req, res, next) ->
-  res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
-  res.header('Expires', '-1');
-  res.header('Pragma', 'no-cache');
-  next();
+  res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate')
+  res.header('Expires', '-1')
+  res.header('Pragma', 'no-cache')
+  next()
 app.use compression()
 app.get '/map.html', (req, res, next) ->
   route = req.query.rt
@@ -28,7 +28,7 @@ app.use express.static 'build/public'
 
 getJSON = (type, options, fun, args...) ->
   options ?= ''
-  # console.log "http://www.ctabustracker.com/bustime/api/v2/#{type}?key=#{KEY}#{options}&format=json"
+  console.log "http://www.ctabustracker.com/bustime/api/v2/#{type}?key=#{KEY}#{options}&format=json"
   http.get "http://www.ctabustracker.com/bustime/api/v2/#{type}?key=#{KEY}#{options}&format=json", (res) ->
     bodyChunks = []
     res

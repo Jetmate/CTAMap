@@ -1,5 +1,5 @@
 {
-  "name": "MyCTAMap",
+  "name": "myctamap",
   "version": "1.0.0",
   "description": "Real-time CTA vehicle map",
   "main": "app.js",
@@ -11,7 +11,10 @@
     "Christian Sparks <csparks1919@hotmail.com> (https://github.com/cmsparks)"
   ],
   "license": "MIT",
-  "repository": "https://github.com/Jetmate/CTAMap",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jetmate/CTAMap.git"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.4.0",
@@ -25,6 +28,11 @@
     "compression": "^1.6.2",
     "express": "^4.15.3",
     "helmet": "^3.6.1",
+    "node-sass": "^4.5.3",
     "socket.io": "^2.0.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Jetmate/CTAMap/issues"
+  },
+  "homepage": "https://github.com/Jetmate/CTAMap#readme"
 }

@@ -1,12 +1,22 @@
 doctype html
-html
+html(lang='en')
   head
-    meta(charset="UTF-8")
-    link(rel="stylesheet" href="site.css")
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='author' content='Anton Outkine')
+    meta(name='description' content='An easy way to visualize the CTA.')
+    meta(name='keywords' content='CTA, map, Chicago, public transit, l-train, bus')
+    link(rel='stylesheet' href='site.css')
     title My CTA Map
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css' integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ' crossorigin='anonymous')
   body
-    form(action="map.html" method="get")
-      select(id="selector" name="rt")
+    form(action='map.html' method='get')
+      input(type='radio' name='type' value='train')
+      label Train
+      select(id='selector' name='rt')
       button Submit
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js")
-    script(src="index.js")
+    script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js' integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n' crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js' integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb' crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js' integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn' crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js')
+    script(src='index.js')  

@@ -50,6 +50,7 @@
     if (options == null) {
       options = '';
     }
+    console.log("http://www.ctabustracker.com/bustime/api/v2/" + type + "?key=" + KEY + options + "&format=json");
     return http.get("http://www.ctabustracker.com/bustime/api/v2/" + type + "?key=" + KEY + options + "&format=json", function(res) {
       var bodyChunks;
       bodyChunks = [];
