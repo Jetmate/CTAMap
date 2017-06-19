@@ -44,13 +44,13 @@ getJSON = (type, options, fun, args...) ->
 getRoutes = (socket) ->
   socket.emit 'routes'
   getJSON 'getroutes', '', (body) ->
-    for route in body.routes
-      getJSON 'getvehicles', "&rt=#{route.rt}", (body, route, routes) ->
+    for route, i in body.routes
+      getJSON 'getvehicles', "&rt=#{route.rt}", (body, route, routes, i) ->
         if not body.error?
           socket.emit 'route', route
-        if route == routes[routes.length - 1]
+        if i == routes.length - 1
           socket.emit 'end'
-      , route, body.routes
+      , route, body.routes, i
 
 getPoints = (socket, route) ->
   socket.emit 'points'
