@@ -68,19 +68,19 @@
   getRoutes = function(socket) {
     socket.emit('routes');
     return getJSON('getroutes', '', function(body) {
-      var i, j, len, ref, results;
+      var i, len, ref, results;
       ref = body.routes;
       results = [];
-      for (i = j = 0, len = ref.length; j < len; i = ++j) {
+      for (i = 0, len = ref.length; i < len; i++) {
         route = ref[i];
-        results.push(getJSON('getvehicles', "&rt=" + route.rt, function(body, route, routes, i) {
+        results.push(getJSON('getvehicles', "&rt=" + route.rt, function(body, route, routes) {
           if (body.error == null) {
             socket.emit('route', route);
           }
-          if (i === routes.length - 1) {
+          if (route === routes[routes.length - 1]) {
             return socket.emit('end');
           }
-        }, route, body.routes, i));
+        }, route, body.routes));
       }
       return results;
     });
@@ -89,10 +89,10 @@
   getPoints = function(socket, route) {
     socket.emit('points');
     return getJSON('getpatterns', "&rt=" + route, function(body) {
-      var j, len, point, ref;
+      var i, len, point, ref;
       ref = body.ptr[0].pt;
-      for (j = 0, len = ref.length; j < len; j++) {
-        point = ref[j];
+      for (i = 0, len = ref.length; i < len; i++) {
+        point = ref[i];
         socket.emit('point', {
           lat: parseFloat(point.lat),
           lng: parseFloat(point.lon)
@@ -105,11 +105,11 @@
   getVehicles = function(socket, route) {
     socket.emit('vehicles');
     return getJSON('getvehicles', "&rt=" + route, function(body) {
-      var j, len, ref, results, vehicle;
+      var i, len, ref, results, vehicle;
       ref = body.vehicle;
       results = [];
-      for (j = 0, len = ref.length; j < len; j++) {
-        vehicle = ref[j];
+      for (i = 0, len = ref.length; i < len; i++) {
+        vehicle = ref[i];
         results.push(socket.emit('vehicle', {
           lat: parseFloat(vehicle.lat),
           lng: parseFloat(vehicle.lon)

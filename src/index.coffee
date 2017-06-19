@@ -18,15 +18,17 @@ socket.on 'routes', ->
     numbers.push(route.rt)
     
   socket.on 'end', ->
-    names.sort()
-    numbers.sort(sortNumbers)
-    for name in names
-      name_option = document.createElement('option')
-      name_option.setAttribute('value', pairs[name])
-      name_option.innerHTML = "<p>#{name}</p>"
-      name_selector.appendChild(name_option)
-    for number in numbers
-      num_option = document.createElement('option')
-      num_option.setAttribute('value', number)
-      num_option.innerHTML = "<p>#{number}</p>"
-      number_selector.appendChild(num_option)
+    window.setTimeout ->
+      names.sort()
+      numbers.sort(sortNumbers)
+      for name in names
+        name_option = document.createElement('option')
+        name_option.setAttribute('value', pairs[name])
+        name_option.innerHTML = "<p>#{name}</p>"
+        name_selector.appendChild(name_option)
+      for number in numbers
+        num_option = document.createElement('option')
+        num_option.setAttribute('value', number)
+        num_option.innerHTML = "<p>#{number}</p>"
+        number_selector.appendChild(num_option)
+    , 300
