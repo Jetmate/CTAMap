@@ -28,7 +28,7 @@ app.use express.static 'build/public'
 
 getJSON = (type, options, fun, args...) ->
   options ?= ''
-  console.log "http://www.ctabustracker.com/bustime/api/v2/#{type}?key=#{KEY}#{options}&format=json"
+  # console.log "http://www.ctabustracker.com/bustime/api/v2/#{type}?key=#{KEY}#{options}&format=json"
   http.get "http://www.ctabustracker.com/bustime/api/v2/#{type}?key=#{KEY}#{options}&format=json", (res) ->
     bodyChunks = []
     res
@@ -42,10 +42,12 @@ getRoutes = (socket) ->
   socket.emit 'routes'
   getJSON 'getroutes', '', (body) ->
     for route in body.routes
-      getJSON 'getvehicles', "&rt=#{route.rt}", (body, route) ->
+      getJSON 'getvehicles', "&rt=#{route.rt}", (body, route, routes) ->
         if not body.error?
           socket.emit 'route', route
-      , route
+        if route == routes[routes.length - 1]
+          socket.emit 'end'
+      , route, body.routes
 
 getPoints = (socket, route) ->
   socket.emit 'points'

@@ -3,6 +3,7 @@ map = new google.maps.Map document.getElementById('map'), {
   zoom: 12
   center: chicago
 }
+
 iconSize = new google.maps.Size(60, 60)
 anchor = new google.maps.Point(iconSize.width / 2, iconSize.height / 2)
 icons =
@@ -75,7 +76,7 @@ icons =
 
 directionsDisplay = new google.maps.DirectionsRenderer()
 directionsDisplay.setMap(map)
-# directionsService = new google.maps.DirectionsService()    
+# directionsService = new google.maps.DirectionsService()
 # stops = []
 vehicles = []
 

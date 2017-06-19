@@ -50,7 +50,6 @@
     if (options == null) {
       options = '';
     }
-    console.log("http://www.ctabustracker.com/bustime/api/v2/" + type + "?key=" + KEY + options + "&format=json");
     return http.get("http://www.ctabustracker.com/bustime/api/v2/" + type + "?key=" + KEY + options + "&format=json", function(res) {
       var bodyChunks;
       bodyChunks = [];
@@ -70,11 +69,14 @@
       results = [];
       for (i = 0, len = ref.length; i < len; i++) {
         route = ref[i];
-        results.push(getJSON('getvehicles', "&rt=" + route.rt, function(body, route) {
+        results.push(getJSON('getvehicles', "&rt=" + route.rt, function(body, route, routes) {
           if (body.error == null) {
-            return socket.emit('route', route);
+            socket.emit('route', route);
           }
-        }, route));
+          if (route === routes[routes.length - 1]) {
+            return socket.emit('end');
+          }
+        }, route, body.routes));
       }
       return results;
     });
