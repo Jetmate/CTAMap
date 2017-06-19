@@ -42,7 +42,7 @@
     return next();
   });
 
-  app.use(express["static"]('build/public'));
+  app.use(express["static"]('public'));
 
   getJSON = function() {
     var args, fun, options, type;

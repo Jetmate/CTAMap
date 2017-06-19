@@ -23,7 +23,7 @@ app.use compression()
 app.get '/map.html', (req, res, next) ->
   route = req.query.rt
   next()
-app.use express.static 'build/public'
+app.use express.static 'public'
 
 
 getJSON = (type, options, fun, args...) ->
