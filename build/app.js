@@ -38,7 +38,11 @@
   app.use(compression());
 
   app.get('/map.html', function(req, res, next) {
-    route = req.query.rt;
+    if (req.query.input_type === 'name') {
+      route = req.query.rt;
+    } else {
+      route = req.query['rt-number'];
+    }
     return next();
   });
 

@@ -21,7 +21,10 @@ app.use (req, res, next) ->
   next()
 app.use compression()
 app.get '/map.html', (req, res, next) ->
-  route = req.query.rt
+  if req.query.input_type == 'name'
+    route = req.query.rt
+  else
+    route = req.query['rt-number']
   next()
 app.use express.static 'public'
 

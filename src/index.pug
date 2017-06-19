@@ -40,15 +40,20 @@ html(lang='en')
           br
           .pure-g
             .pure-u-11-24
-              p Route Name
+              input#name(type='radio' name='input_type' value='name' checked) 
+              label.pure-radio(for='name'): p Route Name
               select.pure-input-1-2#rt-name(name='rt')
             .pure-u-2-24
               p.divider OR
             .pure-u-11-24
-              p Route Number
+              input#number(type='radio' name='input_type' value='number')
+              label.pure-radio(for='number'): p Route Number
               select.pure-input-1-2#rt-number(name='rt-number')
           br
           button.pure-button Submit
+      br
+      br
+      br
       br
       br
       br

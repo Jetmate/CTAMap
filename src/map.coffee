@@ -111,7 +111,6 @@ socket.on 'points', ->
     if not first?
       first = coords
     last = coords
-  console.log(first, last, )
 
   socket.on 'end', ->
     if first.lng <= last.lng
