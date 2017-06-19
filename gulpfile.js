@@ -36,7 +36,7 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
   return gulp.src(source + scripts)
     .pipe(coffee())
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest(clientOutput))
 })
 

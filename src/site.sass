@@ -1,6 +1,58 @@
-select, button
-  // margin-left: 25%
-  // margin-right: 25%
-  // width: 50%
-  display: inline
+// select, button
+//   // margin-left: 25%
+//   // margin-right: 25%
+//   // width: 50%
+//   display: inline
+//   text-align: center
+
+
+body, label, p
+  font-family: Montserrat
+
+body
+  background-color: #CEE8FA
   text-align: center
+
+.content
+  width: 50%
+  margin: auto
+
+label
+  padding: 5%
+  white-space: nowrap
+  
+.img-choice label
+  padding: 5%
+  transition: all .2s ease
+
+.img-choice label:hover
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+
+.img-choice input:checked + label
+  box-shadow: 0 0 -2px rgba(0, 0, 0, 0.2);
+  transform: scale(1.5)
+
+.pure-button
+  background-color: #D4AD73
+  font-size: 1.3em
+  border-radius: 8px
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+
+.divider
+  font-weight: bold
+  font-size: 130%
+
+img
+  max-width: 75%
+
+.pure-g
+  justify-content: center
+  align-items: center
+
+input[type=radio]
+  display: none
+
+footer
+  border-top: 2px solid black
+  font-size: 80%
+  // padding: 1%

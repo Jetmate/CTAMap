@@ -2,21 +2,72 @@ doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
     meta(name='author' content='Anton Outkine')
     meta(name='description' content='An easy way to visualize the CTA.')
     meta(name='keywords' content='CTA, map, Chicago, public transit, l-train, bus')
-    link(rel='stylesheet' href='site.css')
     title My CTA Map
-    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css' integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ' crossorigin='anonymous')
+    link(rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css")
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    link(rel='stylesheet' href='site.css')
   body
-    form(action='map.html' method='get')
-      input(type='radio' name='type' value='train')
-      label Train
-      select(id='selector' name='rt')
-      button Submit
+    .content
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      form.pure-form(action='map.html' method='get')
+        fieldset
+          .pure-g.img-choice
+            .choice.pure-u-1.pure-u-sm-1-2
+              input#option-1(type='radio' name='type' value='train') 
+              label.pure-radio(for='option-1'): img(src='/media/metro.svg')
+            br
+            .choice.pure-u-1.pure-u-sm-1-2
+              input#option-2(type='radio' name='type' value='bus')
+              label.pure-radio(for='option-2'): img(src='/media/bus.svg')
+          br
+          br
+          br
+          br
+          br
+          br
+          .pure-g
+            .pure-u-11-24
+              //- p Yeah man who doesn't love this shit
+              label(for='rt-name') Route Name
+              select.pure-input-1-2#rt-name(name='rt-name')
+            .pure-u-2-24
+              p.divider OR
+            .pure-u-11-24
+              label(for='rt-number') Route Number
+              select.pure-input-1-2#rt-number(name='rt-number')
+          br
+          button.pure-button Submit
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+    footer
+      br
+      <div>Icons made by <a href="http://www.freepik.com" title=  "Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+      br
     script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js' integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n' crossorigin='anonymous')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js' integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb' crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js' integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6-Qin1DkWx51bBrb' crossorigin='anonymous')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js' integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn' crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js')
-    script(src='index.js')  
+    script(src='index.js')
