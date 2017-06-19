@@ -1,1 +1,1 @@
-(function(){var e,t;e=document.getElementById("selector"),(t=io()).emit("index_ready"),t.on("routes",function(){return t.on("route",function(t){var n;return(n=document.createElement("option")).setAttribute("value",t.rt),n.innerHTML="<p>"+t.rtnm+"</p>",e.appendChild(n)})})}).call(this);
+(function(){var t,e;t=document.getElementById("rt-name"),(e=io()).emit("index_ready"),e.on("routes",function(){return e.on("route",function(e){var n;return(n=document.createElement("option")).setAttribute("value",e.rt),n.innerHTML="<p>"+e.rtnm+"</p>",t.appendChild(n)})})}).call(this);

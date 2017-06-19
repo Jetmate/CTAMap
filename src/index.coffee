@@ -1,11 +1,11 @@
-selector = document.getElementById("selector")
+selector = document.getElementById('rt-name')
 
 socket = io()
 socket.emit 'index_ready'
 
 socket.on 'routes', ->
   socket.on 'route', (route) ->
-    option = document.createElement("option")
-    option.setAttribute("value", route.rt)
+    option = document.createElement('option')
+    option.setAttribute('value', route.rt)
     option.innerHTML = "<p>#{route.rtnm}</p>"
     selector.appendChild(option)

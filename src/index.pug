@@ -22,7 +22,7 @@ html(lang='en')
       br
       br
       br
-      form.pure-form(action='map.html' method='get')
+      form.pure-form(action='/map.html' method='get')
         fieldset
           .pure-g.img-choice
             .choice.pure-u-1.pure-u-sm-1-2
@@ -40,13 +40,12 @@ html(lang='en')
           br
           .pure-g
             .pure-u-11-24
-              //- p Yeah man who doesn't love this shit
-              label(for='rt-name') Route Name
-              select.pure-input-1-2#rt-name(name='rt-name')
+              p Route Name
+              select.pure-input-1-2#rt-name(name='rt')
             .pure-u-2-24
               p.divider OR
             .pure-u-11-24
-              label(for='rt-number') Route Number
+              p Route Number
               select.pure-input-1-2#rt-number(name='rt-number')
           br
           button.pure-button Submit

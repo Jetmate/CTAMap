@@ -114,6 +114,9 @@
   };
 
   io.on('connection', function(socket) {
+    socket.on('index_ready', function() {
+      return getRoutes(socket);
+    });
     socket.on('map_ready', function() {
       getPoints(socket, route);
       getVehicles(socket, route);

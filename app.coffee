@@ -72,8 +72,8 @@ getVehicles = (socket, route) ->
       socket.emit 'vehicle', {lat: parseFloat(vehicle.lat), lng: parseFloat(vehicle.lon)}, vehicle.hdg
 
 io.on 'connection', (socket) ->
-  # socket.on 'index_ready', ->
-  #   getRoutes(socket)
+  socket.on 'index_ready', ->
+    getRoutes(socket)
 
   socket.on 'map_ready', ->
     getPoints(socket, route)
