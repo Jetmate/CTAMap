@@ -26,7 +26,7 @@ html(lang='en')
         fieldset
           .pure-g.img-choice
             .choice.pure-u-1.pure-u-sm-1-2
-              input#option-1(type='radio' name='type' value='train') 
+              input#option-1(type='radio' name='type' value='train')
               label.pure-radio(for='option-1'): img(src='/media/metro.svg')
             br
             .choice.pure-u-1.pure-u-sm-1-2
@@ -40,7 +40,7 @@ html(lang='en')
           br
           .pure-g
             .pure-u-11-24
-              input#name(type='radio' name='input_type' value='name' checked) 
+              input#name(type='radio' name='input_type' value='name' checked)
               label.pure-radio(for='name'): p Route Name
               select.pure-input-1-2#rt-name(name='rt')
             .pure-u-2-24
@@ -75,3 +75,11 @@ html(lang='en')
     //- script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js' integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn' crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js')
     script(src='index.js')
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-106173544-2', 'auto');
+      ga('send', 'pageview');
